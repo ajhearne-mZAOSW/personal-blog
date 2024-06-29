@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Rock+Salt&display=swap');
+
+* {
+    font-family: "Quicksand", 'Monterro', Times, serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --darkPrimary: #292d33;
+    --yellow: #f2d351;
+    --opYellow: #f8e9a7;
+    --offWhite: #efefef;
+    --blue: #95a9f0;
+    --opBlue: #bfcbf6;
+}
+
+body {
+    font-family: "Quicksand", 'Monterro', Times, serif;
+    line-height: 1.5;
+    background-color: var(--darkPrimary);
+}
+
+header {
+    /* padding: 15px 6% 15px 0; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer {
+    /* padding: 3px 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--darkPrimary);
+    color: var(--offWhite);
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.main div {
+    padding: 5%;
+}
+
+#main-image {
+    max-height: 300px;
+    max-width: 300px;
+}

@@ -1,0 +1,18 @@
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.blog-form form {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 2px;
+    min-width: 40vw;
+}
+
+input {
+    padding: 2px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}

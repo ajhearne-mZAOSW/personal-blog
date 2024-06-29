@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>My First Blog</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/form.css" />
 </head>
@@ -23,11 +24,11 @@
     </header>
 
     <main>
-        <section>
+        <section class="main">
             <div>
-                <img src="./assets/images/landing-main.png" alt="illustration of person in thought">
+                <img src="./assets/images/blog-dark.png" alt="illustration of person in thought" id="main-image">
             </div>
-            <div>
+            <div class="blog-form">
                 <h1>What's on your mind?</h1>
                 <form>
                     <label for="username">Username</label>
@@ -36,7 +37,6 @@
                     <input type="text" id="post-title" name="post-title">
                     <label for="content">Content</label>
                     <input type="text" id="content" name="content">
-                    <label for="submit">Submit</label>
                     <input type="submit" id="submit" name="submit">
                 </form>
             </div>
@@ -46,6 +46,7 @@
     <footer>
         <div>
             <p>Alana Hearne 2024</p>
+            <!-- <a href="https://storyset.com/internet">Internet illustrations by Storyset</a> -->
         </div>
     </footer>
 
