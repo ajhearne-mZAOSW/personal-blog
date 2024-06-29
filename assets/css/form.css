@@ -1,7 +1,6 @@
 .blog-form {
     display: flex;
     flex-direction: column;
-    color: white;
 }
 
 .blog-form form {
@@ -14,5 +13,13 @@
 input {
     padding: 2px;
     margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+textarea {
+    padding: 2px;
+    margin-bottom: 10px;
+    border: 1px solid;
     border-radius: 5px;
 }
