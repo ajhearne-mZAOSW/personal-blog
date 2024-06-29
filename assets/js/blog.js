@@ -6,35 +6,34 @@ console.log(posts);
 
 // build elements and append to DOM
 function buildNewPost () {
-    for (let i = 0; i < posts.length; i++) {
-        const post = posts[i];
-        
-        const newPost = document.createElement('div');
-        newPost.setAttribute('class', 'blog-post');
-        newPost.setAttribute('data-index', i);
+    if (posts === null) {
+        return;
+    } else {
+        for (let i = 0; i < posts.length; i++) {
+            const post = posts[i];
+            
+            const newPost = document.createElement('div');
+            newPost.setAttribute('class', 'blog-post');
+            newPost.setAttribute('data-index', i);
 
-        const blogUsername = document.createElement('h1');
-        const blogTitle = document.createElement('h2');
-        const blogContent = document.createElement('p');
+            const blogUsername = document.createElement('h1');
+            const hzLine = document.createElement('hr');
+            hzLine.setAttribute('class', 'hz-line');
 
-        blogUsername.textContent = post.username;
-        blogTitle.textContent = post.title;
-        blogContent.textContent = post.content;
-        
-        main.appendChild(newPost);
-        newPost.appendChild(blogUsername);
-        newPost.appendChild(blogTitle);
-        newPost.appendChild(blogContent);
+            const blogContent = document.createElement('p');
+            const blogTitle = document.createElement('h2');
+
+            blogUsername.textContent = post.username;
+            blogContent.textContent = post.content;
+            blogTitle.textContent = `Posted by: ${post.title}`;
+
+            main.appendChild(newPost);
+            newPost.appendChild(blogUsername);
+            newPost.appendChild(hzLine);
+            newPost.appendChild(blogContent);
+            newPost.appendChild(blogTitle);
+        }
     }
-}
-
-// if no blog posts to display
-if (posts.length === 0) {
-    const noPosts = document.createElement('img');
-    noPosts.setAttribute('class', 'no-posts');
-    noPosts.src = "./assets/images/noposts-light.png"
-
-    main.appendChild(noPosts);
 }
 
 // read and return local storage data
@@ -52,3 +51,12 @@ function readBlogData () {
 
 readBlogData()
 buildNewPost();
+
+// if no blog posts to display
+if (posts === null) {
+    const noPosts = document.createElement('img');
+    noPosts.setAttribute('class', 'no-posts');
+    noPosts.src = "./assets/images/noposts-light.png"
+
+    main.appendChild(noPosts);
+}

@@ -1,3 +1,34 @@
+.blog-header {
+    margin-left: 20px;
+}
+
 .blog-post {
-    border: 2px solid red;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 5px 20px 15px 20px;
+    padding: 0px 20px;
+}
+
+.blog-post h1 {
+    padding-left: 10px;
+    font-size: 200%;
+}
+
+.no-posts {
+    width: 80vh;
+}
+
+.hz-line {
+    border-top: 1px solid;
+    border-bottom: none;
+    width: 100%;
+}
+
+#back-button {
+    margin-right: 10px;
+    width: 70px;
+    font-size: large;
+    background-color: var(--offWhite);
+    border: 1px solid;
+    border-radius: 5px;
 }
