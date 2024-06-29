@@ -1,45 +1,36 @@
-// ! fix toggle to set based on theme in local storage
 // Access HTML elements
 const themeSwitcher = document.getElementById('theme-switcher');
 const container = document.querySelector('.container');
-let mainImage = document.getElementById('main-image');
+const mainImage = document.getElementById('main-image');
 
 // Set default mode to dark
-let mode = 'dark';
+themeSwitcher.checked = false;
 
 // Listen for a click event on toggle switch
-themeSwitcher.addEventListener('click', function () {
-    // If mode is dark, apply light background
-    if (mode === 'dark') {
-        mode = 'light';
-        container.setAttribute('class', 'light');
-        mainImage.src = "./assets/images/blog-light.png";
-        localStorage.setItem('theme', mode);
-    }
-    // If mode is light, apply dark background
-    else {
-        mode = 'dark';
+function clickHandler () {
+    // if dark
+    if (this.checked) {
         container.setAttribute('class', 'dark');
         mainImage.src = "./assets/images/blog-dark.png";
-        localStorage.setItem('theme', mode);
+        localStorage.setItem('theme', 'dark');
     }
-});
+    // if light
+    else {
+        container.setAttribute('class', 'light');
+        mainImage.src = "./assets/images/blog-light.png";
+        localStorage.setItem('theme', 'light');
+    }
+};
+
+themeSwitcher.addEventListener('click', clickHandler);
+
+window.onload = loadTheme()
 
 function loadTheme() {
-    const theme = localStorage.getItem('theme');
+    const localTheme = localStorage.getItem('theme');
 
-    if(!theme) {
-        return;
-    }
-
-    if (theme === 'light') {
-        container.setAttribute('class', 'light');
-        mainImage.src = "./assets/images/blog-light.png";
-        // themeSwitcher.setAttribute()
-    } else {
+    if (localTheme !== null && localTheme === 'dark') {
         container.setAttribute('class', 'dark');
-        mainImage.src = "./assets/images/blog-dark.png";
+        themeSwitcher.checked = true;
     }
 }
-
-loadTheme()
