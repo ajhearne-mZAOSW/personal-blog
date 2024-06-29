@@ -2,6 +2,7 @@
 const themeSwitcher = document.getElementById('theme-switcher');
 const container = document.querySelector('.container');
 const mainImage = document.getElementById('main-image');
+const noPostsImage = document.getElementById('no-posts');
 
 // Set default mode to dark
 themeSwitcher.checked = false;

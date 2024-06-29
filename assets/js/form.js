@@ -15,7 +15,6 @@ function init () {
     }
 }
 
-
 // form submission
 function storeBlogData (event) {
     event.preventDefault();
@@ -27,9 +26,11 @@ function storeBlogData (event) {
     }
 
     // error handling: empty fields
+    // ! still redirecrs when form input is empty
     if (!post.username || !post.title || !post.content) { 
-        alert('Please fill out all fields.'); 
-        return; 
+        alert('Please fill out all fields.');
+        console.log(errorHandling);
+        return;
     }
 
     posts.unshift(post);

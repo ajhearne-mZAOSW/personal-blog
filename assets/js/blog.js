@@ -1,10 +1,10 @@
-// TODO: Create a variable that selects the main element
+// select form element
 const main = document.querySelector('main');
-const submitEl = document.getElementById('submit');
 
 let posts = [];
+console.log(posts);
 
-// TODO: Create a function that builds an element and appends it to the DOM
+// build elements and append to DOM
 function buildNewPost () {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
@@ -28,10 +28,16 @@ function buildNewPost () {
     }
 }
 
-// TODO: Create a function that handles the case where there are no blog posts to display
+// if no blog posts to display
+if (posts.length === 0) {
+    const noPosts = document.createElement('img');
+    noPosts.setAttribute('class', 'no-posts');
+    noPosts.src = "./assets/images/noposts-light.png"
 
+    main.appendChild(noPosts);
+}
 
-// TODO: Create a function that reads from local storage and returns the data
+// read and return local storage data
 function readBlogData () {
     let postData = {
         username: '',
@@ -44,6 +50,5 @@ function readBlogData () {
     posts = postData;
 }
 
-// TODO: Call the function to render the list of blog posts
 readBlogData()
 buildNewPost();
