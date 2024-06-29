@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Rock+Salt&display=swap');
+
+* {
+    font-family: "Quicksand", 'Monterro', Times, serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --darkPrimary: #292d33;
+    --yellow: #f2d351;
+    --opYellow: #f8e9a7;
+    --offWhite: #efefef;
+    --blue: #95a9f0;
+    --opBlue: #bfcbf6;
+}
+
+body {
+    font-family: "Quicksand", 'Monterro', Times, serif;
+    line-height: 1.5;
+    margin: 0px;
+    padding: 10px;
+}
+
+.dark {
+    background-color: var(--darkPrimary);
+    color: var(--offWhite);
+}
+
+.light {
+    background-color: var(--offWhite);
+    color: var(--darkPrimary);
+}
+
+header {
+    /* padding: 15px 6% 15px 0; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer {
+    /* padding: 3px 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.main div {
+    padding: 5%;
+}
+
+#main-image {
+    max-height: 300px;
+    max-width: 300px;
+}
+
+/* ============================================================================================================================================= */
+/* Styling the Switch button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: rgb(29, 128, 210);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px rgb(29, 128, 210);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.row {
+    margin: 20px;
+    display: flex;
+}
+.col {
+    margin: 20px;
+}
