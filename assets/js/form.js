@@ -4,6 +4,18 @@ const usernameEl = document.getElementById('username');
 const titleEl = document.getElementById('post-title');
 const contentEl = document.getElementById('content');
 
+let posts = [];
+console.log(posts);
+
+function init () {
+    const storedPosts = JSON.parse(localStorage.getItem('post'));
+    
+    if (storedPosts !== null) {
+        posts = storedPosts;
+    }
+}
+
+
 // form submission
 function storeBlogData (event) {
     event.preventDefault();
@@ -20,8 +32,9 @@ function storeBlogData (event) {
         return; 
     }
 
+    posts.unshift(post);
     // store form data in local storage
-    localStorage.setItem('post', JSON.stringify(post));
+    localStorage.setItem('post', JSON.stringify(posts));
 
     // reset form
     usernameEl.value = '';
@@ -39,4 +52,6 @@ function redirectPage (event, url) {
 };
 
 // on form submit
-submitEl.addEventListener('click', storeBlogData, redirectPage);
+init();
+submitEl.addEventListener('click', storeBlogData);
+submitEl.addEventListener('click', redirectPage);

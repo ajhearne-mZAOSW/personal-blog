@@ -12,15 +12,16 @@
     <link rel="stylesheet" href="./assets/css/blog.css" />
 </head>
 
-<body>
+<body class="container light">
     <!-- TODO: Create header, main, and footer elements -->
     <header>
         <nav>
             <h1>My First Blog</h1>
             <!-- TODO: add link to portfolio -->
-            <button type="button" class="back-button">Back</button>
-            <label class="theme-toggle">
-                <input type="checkbox">
+            <button onclick="location.href='index.html'" type="button" id="back-button" name="back-button">Back</button>
+            <label class="switch">
+                <input type="checkbox" id="theme-switcher">
+                <span class="slider round"></span>
             </label>
         </nav>
     </header>

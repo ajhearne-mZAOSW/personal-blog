@@ -11,13 +11,17 @@ function clickHandler () {
     // if dark
     if (this.checked) {
         container.setAttribute('class', 'dark');
-        mainImage.src = "./assets/images/blog-dark.png";
+        if (mainImage) {
+            mainImage.src = "./assets/images/blog-dark.png";
+        }  
         localStorage.setItem('theme', 'dark');
     }
     // if light
     else {
         container.setAttribute('class', 'light');
-        mainImage.src = "./assets/images/blog-light.png";
+        if (mainImage) {
+            mainImage.src = "./assets/images/blog-light.png";
+        }
         localStorage.setItem('theme', 'light');
     }
 };
