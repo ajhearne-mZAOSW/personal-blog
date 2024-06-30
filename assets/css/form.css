@@ -12,6 +12,7 @@
 
 input {
     padding: 2px;
+    min-height: 30px;
     margin-bottom: 10px;
     border: 1px solid;
     border-radius: 5px;
@@ -20,6 +21,13 @@ input {
 textarea {
     padding: 2px;
     margin-bottom: 10px;
-        border: 1px solid;
+    border: 1px solid;
     border-radius: 5px;
+}
+
+#submit {
+    background-color: var(--blue);
+    color: var(--darkPrimary);
+    font-weight: bold;
+    min-height: 30px;
 }

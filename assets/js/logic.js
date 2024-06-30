@@ -2,7 +2,7 @@
 const themeSwitcher = document.getElementById('theme-switcher');
 const container = document.querySelector('.container');
 const mainImage = document.getElementById('main-image');
-const noPostsImage = document.getElementById('no-posts');
+const noPostsImg = document.querySelector('no-posts-img');
 
 // Set default mode to dark
 themeSwitcher.checked = false;
@@ -14,7 +14,7 @@ function clickHandler () {
         container.setAttribute('class', 'dark');
         if (mainImage) {
             mainImage.src = "./assets/images/blog-dark.png";
-        }  
+        }
         localStorage.setItem('theme', 'dark');
     }
     // if light
@@ -36,6 +36,9 @@ function loadTheme() {
 
     if (localTheme !== null && localTheme === 'dark') {
         container.setAttribute('class', 'dark');
+        if (mainImage) {
+            mainImage.src = "./assets/images/blog-dark.png";
+        }
         themeSwitcher.checked = true;
     }
 }

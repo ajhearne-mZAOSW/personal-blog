@@ -5,7 +5,6 @@ const titleEl = document.getElementById('post-title');
 const contentEl = document.getElementById('content');
 
 let posts = [];
-console.log(posts);
 
 function init () {
     const storedPosts = JSON.parse(localStorage.getItem('post'));
@@ -26,10 +25,8 @@ function storeBlogData (event) {
     }
 
     // error handling: empty fields
-    // ! still redirecrs when form input is empty
     if (!post.username || !post.title || !post.content) { 
         alert('Please fill out all fields.');
-        console.log(errorHandling);
         return;
     }
 
@@ -41,13 +38,14 @@ function storeBlogData (event) {
     usernameEl.value = '';
     titleEl.value = '';
     contentEl.value = '';
+
+    redirectPage();
 }
 
 // redirect to blog page
 let redirectURL = 'blog.html';
 
 function redirectPage (event, url) {
-    event.preventDefault();
     url = redirectURL;
     location.assign(url);
 };
@@ -55,4 +53,3 @@ function redirectPage (event, url) {
 // on form submit
 init();
 submitEl.addEventListener('click', storeBlogData);
-submitEl.addEventListener('click', redirectPage);

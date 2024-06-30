@@ -2,36 +2,40 @@
 const main = document.querySelector('main');
 
 let posts = [];
-console.log(posts);
 
 // build elements and append to DOM
 function buildNewPost () {
     if (posts === null) {
         return;
     } else {
+        const postBlock = document.createElement('div')
+        postBlock.setAttribute('class', 'post-block')
+        main.appendChild(postBlock);
+
         for (let i = 0; i < posts.length; i++) {
             const post = posts[i];
-            
+
             const newPost = document.createElement('div');
             newPost.setAttribute('class', 'blog-post');
             newPost.setAttribute('data-index', i);
 
-            const blogUsername = document.createElement('h1');
+            const blogUsername = document.createElement('h3');
             const hzLine = document.createElement('hr');
             hzLine.setAttribute('class', 'hz-line');
 
             const blogContent = document.createElement('p');
-            const blogTitle = document.createElement('h2');
+            const blogTitle = document.createElement('h6');
 
             blogUsername.textContent = post.username;
             blogContent.textContent = post.content;
             blogTitle.textContent = `Posted by: ${post.title}`;
 
-            main.appendChild(newPost);
+            
             newPost.appendChild(blogUsername);
             newPost.appendChild(hzLine);
             newPost.appendChild(blogContent);
             newPost.appendChild(blogTitle);
+            postBlock.appendChild(newPost);
         }
     }
 }
@@ -45,7 +49,6 @@ function readBlogData () {
     }
 
     postData = JSON.parse(localStorage.getItem('post'));
-    console.log(postData);
     posts = postData;
 }
 
@@ -54,9 +57,12 @@ buildNewPost();
 
 // if no blog posts to display
 if (posts === null) {
-    const noPosts = document.createElement('img');
+    const noPosts = document.createElement('div');
+    const noPostsImg = document.createElement('img');
     noPosts.setAttribute('class', 'no-posts');
-    noPosts.src = "./assets/images/noposts-light.png"
+    noPostsImg.setAttribute('class', 'no-posts-img');
+    noPostsImg.src = "./assets/images/noposts.png"    
 
     main.appendChild(noPosts);
+    noPosts.appendChild(noPostsImg);
 }
