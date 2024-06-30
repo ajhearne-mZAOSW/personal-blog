@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 * {
     font-family: "Quicksand", 'Monterro', Times, serif;
@@ -24,11 +25,23 @@ body {
 .dark {
     background-color: var(--darkPrimary);
     color: var(--offWhite);
+    .footer {
+        color: var(--yellow);
+    }
+    #blog-button, #back-button, #submit {
+        background-color: var(--yellow);
+    }
 }
 
 .light {
     background-color: var(--offWhite);
     color: var(--darkPrimary);
+    .footer {
+        color: var(--blue);
+    }    
+    #blog-button, #back-button, #submit {
+        background-color: var(--blue);
+    }
 }
 
 header {
@@ -36,14 +49,16 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
+    height: 91px;
 }
 
 nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 footer {
@@ -55,13 +70,19 @@ footer {
     align-items: center;
 }
 
+.footer {
+    font-family: 'Rock Salt';
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-height: 85vh;
+    min-height: 80vh;
 }
 
 .main div {
@@ -73,12 +94,23 @@ footer {
     max-width: 300px;
 }
 
+#blog-button {
+    margin-right: 10px;
+    width: 70px;
+    border: 1px solid;
+    border-radius: 5px;
+    /* background-color: var(--blue);
+    color: var(--darkPrimary); */
+    font-weight: bold;
+    height: 30px;
+}
+
 /* ============================================================================================================================================= */
 /* Styling the Switch button */
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
+    width: 34px;
     height: 34px;
 }
 
@@ -97,7 +129,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #111;
+    background-color: var(--darkPrimary);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -109,23 +141,23 @@ footer {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
+    /* background-color: var(--blue); */
+    /* -webkit-transition: .4s; */
     transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: rgb(29, 128, 210);
+    background-color: var(--offWhite);
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px rgb(29, 128, 210);
+    box-shadow: 0 0 1px var(--offWhite);
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
+    /* -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    transform: translateX(26px); */
 }
 
 /* Rounded sliders */
@@ -135,6 +167,13 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Material Icons";
+    content: "\eb37";
+    font-size: 2rem;
+    color: var(--blue);
 }
 
 .row {

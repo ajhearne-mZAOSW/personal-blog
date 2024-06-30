@@ -1,12 +1,55 @@
-// TODO: Create a variable that selects the form element
+// select form elements
+const submitEl = document.getElementById('submit');
+const usernameEl = document.getElementById('username');
+const titleEl = document.getElementById('post-title');
+const contentEl = document.getElementById('content');
 
-// TODO: Create a function that handles the form submission. Grab the form data and store it in local storage, then redirect to the blog page using the redirectPage function. If the form is submitted with missing data, display an error message to the user.
+let posts = [];
 
-let redirectURL = '';
+function init () {
+    const storedPosts = JSON.parse(localStorage.getItem('post'));
+    
+    if (storedPosts !== null) {
+        posts = storedPosts;
+    }
+}
 
-const redirectPage = function (url) {
-    redirectURL = url;
+// form submission
+function storeBlogData (event) {
+    event.preventDefault();
+
+    const post = {
+        username: usernameEl.value.trim(),
+        title: titleEl.value.trim(),
+        content: contentEl.value.trim(),
+    }
+
+    // error handling: empty fields
+    if (!post.username || !post.title || !post.content) { 
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    posts.unshift(post);
+    // store form data in local storage
+    localStorage.setItem('post', JSON.stringify(posts));
+
+    // reset form
+    usernameEl.value = '';
+    titleEl.value = '';
+    contentEl.value = '';
+
+    redirectPage();
+}
+
+// redirect to blog page
+let redirectURL = 'blog.html';
+
+function redirectPage (event, url) {
+    url = redirectURL;
     location.assign(url);
 };
 
-// TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
+// on form submit
+init();
+submitEl.addEventListener('click', storeBlogData);
