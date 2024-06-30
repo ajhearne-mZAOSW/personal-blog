@@ -22,30 +22,7 @@ body {
     padding: 10px;
 }
 
-.dark {
-    background-color: var(--darkPrimary);
-    color: var(--offWhite);
-    .footer {
-        color: var(--yellow);
-    }
-    #blog-button, #back-button, #submit {
-        background-color: var(--yellow);
-    }
-}
-
-.light {
-    background-color: var(--offWhite);
-    color: var(--darkPrimary);
-    .footer {
-        color: var(--blue);
-    }    
-    #blog-button, #back-button, #submit {
-        background-color: var(--blue);
-    }
-}
-
 header {
-    /* padding: 15px 6% 15px 0; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -62,7 +39,6 @@ nav {
 }
 
 footer {
-    /* padding: 3px 5px; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -87,6 +63,28 @@ footer {
 
 .main div {
     padding: 5%;
+}
+
+.dark {
+    background-color: var(--darkPrimary);
+    color: var(--offWhite);
+    .footer {
+        color: var(--yellow);
+    }
+    #blog-button, #back-button, #submit {
+        background-color: var(--yellow);
+    }
+}
+
+.light {
+    background-color: var(--offWhite);
+    color: var(--darkPrimary);
+    .footer {
+        color: var(--blue);
+    }    
+    #blog-button, #back-button, #submit {
+        background-color: var(--blue);
+    }
 }
 
 #main-image {
@@ -141,8 +139,6 @@ footer {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    /* background-color: var(--blue); */
-    /* -webkit-transition: .4s; */
     transition: .4s;
 }
 
@@ -152,12 +148,6 @@ input:checked + .slider {
 
 input:focus + .slider {
     box-shadow: 0 0 1px var(--offWhite);
-}
-
-input:checked + .slider:before {
-    /* -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px); */
 }
 
 /* Rounded sliders */

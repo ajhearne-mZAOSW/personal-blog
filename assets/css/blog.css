@@ -10,6 +10,12 @@ header p {
     align-items: center;
 }
 
+.hz-line {
+    border-top: 1px solid;
+    border-bottom: none;
+    width: 100%;
+}
+
 .post-block {
     min-height: 80vh;
 }
@@ -36,12 +42,6 @@ header p {
 
 .no-posts-img {
     height: 40vw;
-}
-
-.hz-line {
-    border-top: 1px solid;
-    border-bottom: none;
-    width: 100%;
 }
 
 #back-button {
